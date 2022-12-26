@@ -1,24 +1,3 @@
-<script type="text/javascript">
-    window.onload = function() { jam(); }
-   
-    function jam() {
-     var e = document.getElementById('jam'),
-     d = new Date(), h, m, s;
-     h = d.getHours();
-     m = set(d.getMinutes());
-     s = set(d.getSeconds());
-   
-     e.innerHTML = h +':'+ m +':'+ s;
-   
-     setTimeout('jam()', 1000);
-    }
-   
-    function set(e) {
-     e = e < 10 ? '0'+ e : e;
-     return e;
-    }
-   </script>
-
    <style>
     .google-maps {
         position: relative;
@@ -39,33 +18,18 @@
    height: auto;
 }
 </style>
-<script language="JavaScript">
-  var tanggallengkap = new String();
-  var namahari = ("Minggu Senin Selasa Rabu Kamis Jumat Sabtu");
-  namahari = namahari.split(" ");
-  var namabulan = ("Januari Februari Maret April Mei Juni Juli Agustus September Oktober November Desember");
-  namabulan = namabulan.split(" ");
-  var tgl = new Date();
-  var hari = tgl.getDay();
-  var tanggal = tgl.getDate();
-  var bulan = tgl.getMonth();
-  var tahun = tgl.getFullYear();
-  tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " + tahun;
-  </script>
-
-
 </head>
 
 <body>
 
-<nav class="navbar navbar-primary bg-info">
+<nav class="navbar navbar-primary bg-primary">
 
-    <a class="navbar-info" href="#">
-      <img src="assets/smg.png" alt="Logo" style="width:80px;" class="d-inline-block align-text-top"> SMKN 1 PURBALINGGA</a>
-      <br>
-      
-    </a>
-
-    <h4><script language='JavaScript'>document.write(tanggallengkap).setTimeout;</script> |<br><h4 id='jam'></h4></h4>
+<a class="navbar-brand" href="#">
+            <img src="assets/SMK.png" alt="" width="200"  class="d-inline-block align-text-top me-1"></a>
+          
+<?php 
+date_default_timezone_set('Asia/Jakarta');
+echo "".date('l, d-M-Y /
+                H:i:s a');?>
   </div>
 </nav>

@@ -6,8 +6,8 @@
  </div>
  <div class="card-body">
  <a href="<?php echo base_url().'Welcome' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
- <a href="<?php echo base_url().'Bukutamu/tambah_tamu' ?>" class='btn btn-sm 
-btn-info pull-left'><i class="fa fa-plus"></i> Tamu Baru</a>
+ <a href="<?php echo base_url().'Bukutamu/tambah' ?>" class='btn btn-sm 
+btn-primary pull-left'><i class="fa fa-plus"></i> Tamu Baru</a>
 
  <br/>
  <br/>

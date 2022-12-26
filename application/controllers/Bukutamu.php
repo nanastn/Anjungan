@@ -18,9 +18,9 @@ class Bukutamu extends CI_Controller {
 		// $this->load->view('template/footer');
 }
 
-function tambah_tamu(){
-       
-    $this->load->view('template/header');
+function tambah(){
+    $this->load->view('template/header');   
+    $this->load->view('template/navbar');
     $this->load->view('Bukutamu/v_tambahbuku.php');	
 }
 
