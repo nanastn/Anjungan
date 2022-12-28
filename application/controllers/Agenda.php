@@ -5,16 +5,20 @@ parent::__construct();
 $this->load->model('M_agenda');
 }
 	function index(){
-	$this->load->view('agenda/v_agenda');
-	$data ['agenda'] = $this->M_agenda->tampil_data()->result();
+		$this->load->view('template/header');
+        $this->load->view('template/navbar');
+		
+	$data ['agenda'] = $this->M_agenda->tampil_data('agenda')->result();
 	$this->load->view('agenda/v_agenda',$data);
+	$this->load->view('template/footer');
 	}
 	function tambah(){
-	$data ['agenda'] = $this->M_agenda->tampil_data()->result();
-	$this->load->view('agenda/v_inputagenda',$data);
+		$this->load->view('template/header');   
+    $this->load->view('template/navbar');
+	$this->load->view('agenda/v_tambahagenda');
 	}
 	
-	function tambah_agenda(){
+	function tambah_aksi(){
 		$id_agenda = $this->input->post('id_agenda');
 		$hari = $this->input->post('hari');
 		$tgl = $this->input->post('tgl');
@@ -40,6 +44,8 @@ $this->load->model('M_agenda');
 			redirect('Agenda');
 			}
 		function edit($id_agenda){
+			$this->load->view('template/header');   
+			$this->load->view('template/navbar');
 				$where = array('id_agenda' => $id_agenda);
 				$data['agenda'] = $this->M_agenda->edit_data($where,'agenda')->result();
 				$this->load->view('Agenda/v_editagenda',$data);

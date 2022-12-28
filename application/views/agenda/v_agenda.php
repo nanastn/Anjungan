@@ -1,25 +1,18 @@
-<?php
-include('template/header.php')
-?>
-<nav class="navbar navbar-primary bg-info">
+<br>
+<div class="container">
+ <div class="card">
+ <div class="card-header text-center">
+ <h4>Agenda </h4>
+ </div>
+ <div class="card-body">
+ <a href="<?php echo base_url().'Welcome' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
+ <a href="<?php echo base_url().'Agenda/tambah' ?>" class='btn btn-sm 
+btn-primary pull-left'><i class="fa fa-plus"></i>Agenda</a>
 
-    <a class="navbar-info" href="#">
-      <img src="assets/smg.png" alt="Logo" style="width:80px;" class="d-inline-block align-text-top"> SMKN 1 PURBALINGGA</a>
-      <br>
-      
-    </a>
-
-    <h4><script language='JavaScript'>document.write(tanggallengkap).setTimeout;</script> |<br><h4 id='jam'></h4></h4>
-  </div>
-</nav>
-
-    </div>
-    <div class="card-body"> 
-        <div class="table-responsive">
-            
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">        
-            <thead>
-
+ <br/>
+ <br/>
+ 
+ <table class="table table-bordered table-striped table-hover">
                     <tr>
                         <th width="1%">No</th>
                         <th>Hari</th>
@@ -35,17 +28,17 @@ include('template/header.php')
                 </tbody>
                 <?php 
 $no = 1;
-foreach($kelas as $k){ ?>
+foreach($agenda as $a){ ?>
 <tr>
 <td><?php echo $no++; ?></td>
-<td><?php echo $k->hari ?></td>
-<td><?php echo $k->tgl ?></td>
-<td><?php echo $k->agenda ?></td>
-<td><?php echo $k->jam ?></td>
-<td><?php echo $k->keterangan ?></td>
+<td><?php echo $a->hari ?></td>
+<td><?php echo $a->tgl ?></td>
+<td><?php echo $a->agenda ?></td>
+<td><?php echo $a->jam ?></td>
+<td><?php echo $a->keterangan ?></td>
 <td>
- <?php echo anchor('Agenda/edit/'.$k->id_agenda,'<button type="button" class="btn btn-primary">Edit</button>'); ?>
- <?php echo anchor('Agenda/hapus/'.$k->id_agenda,'<button type="button" class="btn btn-danger">Hapus</button>'); ?>
+ <?php echo anchor('Agenda/edit/'.$a->id_agenda,'<button type="button" class="btn btn-primary">Edit</button>'); ?>
+ <?php echo anchor('Agenda/hapus/'.$a->id_agenda,'<button type="button" class="btn btn-danger">Hapus</button>'); ?>
 </td>
 </tr>
 <?php } ?>
